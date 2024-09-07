@@ -108,3 +108,7 @@ The script defines a `Neo4jDB` class that has methods to create and close a data
 There are also several helper functions, such as `make_attribute()` that returns a formatted string with attributes to use when creating a node, `create_cypher_nodes()` that creates a cypher query for a node, `create_cypher_edges()` that creates a cypher query for an edge, `create_gremlin_nodes()` that creates a gremlin query for a node, and so on. 
 
 The script seems to have some issues as well, such as the `create_gremlin_text()` function is calling `create_cypher_nodes()` and `create_cypher_edges()` instead of creating gremlin queries. There are also some incomplete function names, such as `make_table()` and `make...`.
+
+Create an information retrieval system that who effectivess as retrieving information can be measured.
+
+
