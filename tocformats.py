@@ -55,7 +55,7 @@ def run_cypher(cypher):
     add_element.close()
 
     # local
-    # add_element = Neo4jDB("bolt://localhost:7687", "neo4j", "reb00REB")
+    # add_element = Neo4jDB("bolt://localhost:7687", username, password)
     # add_element.create_element(cypher)
     # add_element.close()
 
