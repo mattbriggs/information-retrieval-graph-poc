@@ -8,8 +8,10 @@ https://py2neo.org/
 from py2neo import Graph
 import mdbutilities.mdbutilities as MU
 
+username = ""
+password = ""
 
-graph = Graph("bolt://localhost:7687", auth=("neo4j", "xxxxxx"))
+graph = Graph("bolt://localhost:7687", auth=(username, password))
 
 
 toc_path = "C:\\git\\ms\\azure-docs-pr\\articles\\cloud-services\\"

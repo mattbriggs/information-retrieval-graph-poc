@@ -28,6 +28,10 @@ class HelloWorldExample:
 
 
 if __name__ == "__main__":
-    greeter = HelloWorldExample("bolt://localhost:7687", "neo4j", "reb00REB")
+
+    username = ""
+    password = ""
+
+    greeter = HelloWorldExample("bolt://localhost:7687", username, password)
     greeter.print_greeting("hello, world")
     greeter.close()
