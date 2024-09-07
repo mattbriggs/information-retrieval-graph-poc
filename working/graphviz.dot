@@ -1,0 +1,257 @@
+digraph G  {
+    layout=fdp
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "19888b65-4693-4a09-a1ae-ee6394f94a7b";
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "5498bb37-379e-416d-97c6-ff885b67268f";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "409abb50-3819-474f-9e21-d3b7ee20257c";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "aa791be5-9895-45a8-8144-8ff3b8f58e7e";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "25fcbf5e-0362-4837-b71a-45633d01fe61";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "e7a5c905-85ab-4090-9fd5-1cfdd9153dd6";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "e241a297-bc47-4d4f-993f-801dd07adf12";       
+    "e7a5c905-85ab-4090-9fd5-1cfdd9153dd6" -> "6e147376-4cbc-4a7e-9cf9-bd3766c0fa43";       
+    "e7a5c905-85ab-4090-9fd5-1cfdd9153dd6" -> "ef4960f9-71fd-4ef9-ad90-36615f91467b";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "e7a5c905-85ab-4090-9fd5-1cfdd9153dd6";       
+    "25fcbf5e-0362-4837-b71a-45633d01fe61" -> "99d3b385-faa8-48d7-a506-fbdc59547604";       
+    "25fcbf5e-0362-4837-b71a-45633d01fe61" -> "fa9ce2ac-668a-418e-b724-326d5ea0be2f";       
+    "25fcbf5e-0362-4837-b71a-45633d01fe61" -> "7f44c03d-9869-4ed3-a9f8-6d4b1222acfe";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "25fcbf5e-0362-4837-b71a-45633d01fe61";       
+    "aa791be5-9895-45a8-8144-8ff3b8f58e7e" -> "e66f8c49-2c83-4771-89e4-b32c3928ba26";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "aa791be5-9895-45a8-8144-8ff3b8f58e7e";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "595be46e-1a75-4ba8-b092-3ca89dae9a42";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "4135fbd0-2874-4e57-98d4-4a0a96fcdca2";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "fecebc29-aed1-441b-a32d-39706ccda8fb";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "f322015f-6a63-4fb5-b003-f47bd03089e1";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "3c8764e4-ac8a-44d0-a7e0-87fd9b8e1379";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "409abb50-3819-474f-9e21-d3b7ee20257c";       
+    "3c8764e4-ac8a-44d0-a7e0-87fd9b8e1379" -> "06b917ab-3bf8-43e4-887c-43f9d88a6f64";       
+    "3c8764e4-ac8a-44d0-a7e0-87fd9b8e1379" -> "7b86dfdf-85b4-4642-8df4-75318397c201";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "3c8764e4-ac8a-44d0-a7e0-87fd9b8e1379";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "ddcbd97a-8c11-491e-b1af-f0b72d92f097";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "bdab4545-cb0c-445e-9f35-a53b383a8286";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "bb794e7a-620e-437b-89dd-bd226b54ba18";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "9709c271-21c7-4dec-baf0-b0fa24c8d989";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "d53001a5-9840-4642-81ba-983f255c6160";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "9e09e942-b12a-4acd-ab2f-b61c40409964";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "14be7f05-061a-4f18-98c9-099ec6842809";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "76a85cba-3197-4e6f-bade-27456a2ff7a0";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "f6fc7e7a-e5ec-4d71-9df8-446fae785ebe";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "e4337b7a-ddfa-42a6-8773-0f11e707b649";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "1c6a8eef-926a-4faf-8c27-fbb8ca82f0ac";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "f322015f-6a63-4fb5-b003-f47bd03089e1";       
+    "76a85cba-3197-4e6f-bade-27456a2ff7a0" -> "e49a1e7d-e360-4414-8876-bfba8a4e26a2";       
+    "76a85cba-3197-4e6f-bade-27456a2ff7a0" -> "9fc8346c-7e12-470a-bb1a-c4d2a7cff652";       
+    "76a85cba-3197-4e6f-bade-27456a2ff7a0" -> "7992c7a5-09c4-4c83-9c3e-e76abcdf446f";       
+    "76a85cba-3197-4e6f-bade-27456a2ff7a0" -> "2246e533-950c-4c60-9a77-5f2c1874053c";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "76a85cba-3197-4e6f-bade-27456a2ff7a0";       
+    "14be7f05-061a-4f18-98c9-099ec6842809" -> "3f97c7ea-04e3-4fb9-855b-f71cc0235337";       
+    "14be7f05-061a-4f18-98c9-099ec6842809" -> "321f8011-7f94-42cd-a0e2-414880a993eb";       
+    "14be7f05-061a-4f18-98c9-099ec6842809" -> "6c1d1972-2c8e-4de5-aef2-01a15f8ea677";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "14be7f05-061a-4f18-98c9-099ec6842809";       
+    "9e09e942-b12a-4acd-ab2f-b61c40409964" -> "8c159ec3-6c97-42a7-8f12-68df668426d5";       
+    "9e09e942-b12a-4acd-ab2f-b61c40409964" -> "97d48fae-4fd1-4dfd-9436-59867c8bd722";       
+    "9e09e942-b12a-4acd-ab2f-b61c40409964" -> "80828648-2395-4433-aac3-be1f4a34878b";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "9e09e942-b12a-4acd-ab2f-b61c40409964";       
+    "d53001a5-9840-4642-81ba-983f255c6160" -> "11d9ad41-4630-426d-b407-3882311eead7";       
+    "d53001a5-9840-4642-81ba-983f255c6160" -> "dd2731b2-95f8-4d95-8f71-1967c6e3c5dc";       
+    "d53001a5-9840-4642-81ba-983f255c6160" -> "368cecb4-882c-435d-8e7c-eff8888ce449";       
+    "d53001a5-9840-4642-81ba-983f255c6160" -> "024f9fcc-afe7-40f8-ae0d-5186f9fedf12";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "d53001a5-9840-4642-81ba-983f255c6160";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "622831b3-95ed-42ef-a3d3-613aed41faec";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "0c872f1f-d148-429a-891a-308a54919861";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "65cf1444-963a-43b7-985c-66b0647392f1";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "63164ef1-aaa0-4f2f-9932-435943e31e51";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "d1e4a341-0d89-4b56-99c9-1642b1af1e9c";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "fb6c597a-c66d-44e7-a69c-37b6ef0d40d0";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "ddba6825-0c72-4681-b727-ef653355a9ac";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "5bedb314-2ecf-4e8a-a249-e5e46521b4bc";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "72c09274-c2d4-4a97-a05f-d7810163bb9b";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "295ea835-6421-45e1-a77e-36ec5aed0250";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "9709c271-21c7-4dec-baf0-b0fa24c8d989";       
+    "65cf1444-963a-43b7-985c-66b0647392f1" -> "3ddd7874-29d0-4764-80fc-bb9ee8e4f4d3";       
+    "65cf1444-963a-43b7-985c-66b0647392f1" -> "8b1fc78d-2272-450b-aa41-e270b48446e8";       
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" -> "65cf1444-963a-43b7-985c-66b0647392f1";       
+    "bb794e7a-620e-437b-89dd-bd226b54ba18" -> "9e4dd3e5-3d92-4e9c-a714-0356d359398a";       
+    "bb794e7a-620e-437b-89dd-bd226b54ba18" -> "3abe3d5e-77fd-4a98-9d0a-dee9a7b504e5";       
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" -> "bb794e7a-620e-437b-89dd-bd226b54ba18";       
+    "fecebc29-aed1-441b-a32d-39706ccda8fb" -> "8b1fbe90-8a9e-4d7c-97f5-4f07bddf0d79";       
+    "fecebc29-aed1-441b-a32d-39706ccda8fb" -> "8c3ccee1-0ef4-4f72-9d56-61b5cd72a615";       
+    "fecebc29-aed1-441b-a32d-39706ccda8fb" -> "9b874794-5a12-4483-b405-b2515b934c13";       
+    "fecebc29-aed1-441b-a32d-39706ccda8fb" -> "fe3aa5e8-96d2-4a37-8fae-6692975c96fb";       
+    "fecebc29-aed1-441b-a32d-39706ccda8fb" -> "c40a578c-339b-470d-bc68-ec3b9ca37de6";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "fecebc29-aed1-441b-a32d-39706ccda8fb";       
+    "4135fbd0-2874-4e57-98d4-4a0a96fcdca2" -> "988896b2-b971-4911-b261-47110240372e";       
+    "4135fbd0-2874-4e57-98d4-4a0a96fcdca2" -> "a1e213ee-c962-4940-887d-74efe7c1b2fe";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "4135fbd0-2874-4e57-98d4-4a0a96fcdca2";
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" -> "46d60b6c-d37f-4fdf-9876-615034b0bec5";       
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" -> "131abb6f-c6ad-4b5f-aae3-b1d8aed8adc1";       
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" -> "45f30932-b3c7-4439-a1b6-5e65ebe1e69b";       
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" -> "6af825ac-c280-4ae2-a0e5-233794532fc0";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "595be46e-1a75-4ba8-b092-3ca89dae9a42";       
+    "131abb6f-c6ad-4b5f-aae3-b1d8aed8adc1" -> "9066dfa6-929e-4c8c-91fd-73cab2780475";       
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" -> "131abb6f-c6ad-4b5f-aae3-b1d8aed8adc1";       
+    "46d60b6c-d37f-4fdf-9876-615034b0bec5" -> "003124a0-ed00-4d07-b987-34b943280282";       
+    "46d60b6c-d37f-4fdf-9876-615034b0bec5" -> "10bad0da-8277-452d-b6b0-78ca4123de00";       
+    "46d60b6c-d37f-4fdf-9876-615034b0bec5" -> "24e5a6d2-a809-4ca5-acb7-c948f63afca6";       
+    "46d60b6c-d37f-4fdf-9876-615034b0bec5" -> "07d9fa0f-f814-4d16-93b1-fc794bbb1e21";       
+    "46d60b6c-d37f-4fdf-9876-615034b0bec5" -> "4b1c4667-46b9-4c69-91a4-4ff48b1a6d23";       
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" -> "46d60b6c-d37f-4fdf-9876-615034b0bec5";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "6c1265a1-ad7d-4765-98ca-2802a5e40328";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "b41dae53-6203-4739-9ece-8b23f634141d";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "73ebb1e7-ec11-4cbd-8b37-5afbae2ed894";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "0fc3619a-0c8d-4efd-8dfd-f18e6125cda9";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "9f6f6845-0d86-4a48-aeee-2219ec4969bc";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "b8da5e64-b24c-4db3-846a-c72359451a48";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "8bce4105-1b49-4888-a659-b4909fd41b5a";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "9d1d6199-08f1-4c50-8305-0dfc19bac279";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "eab845ea-39d5-4e78-a173-0c34fb14b10e";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "5cbf53e3-4862-4c21-b932-f36c00432a95";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "65edea51-f094-4c03-80ac-e9b04e12a60e";       
+    "409abb50-3819-474f-9e21-d3b7ee20257c" -> "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2";       
+    "65edea51-f094-4c03-80ac-e9b04e12a60e" -> "4e3c490c-d0c6-47ab-918f-5d1d30580130";       
+    "65edea51-f094-4c03-80ac-e9b04e12a60e" -> "4a23647a-46d2-4379-afee-57478879c404";       
+    "65edea51-f094-4c03-80ac-e9b04e12a60e" -> "18b15ab4-a09a-4ae0-a075-215c6621df2b";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "65edea51-f094-4c03-80ac-e9b04e12a60e";       
+    "6c1265a1-ad7d-4765-98ca-2802a5e40328" -> "250ec294-133c-434f-afbf-a3e9ca68da18";       
+    "6c1265a1-ad7d-4765-98ca-2802a5e40328" -> "28298d6b-9795-4cba-b7b0-99e48bde8bf7";       
+    "6c1265a1-ad7d-4765-98ca-2802a5e40328" -> "027f8a67-53b4-459e-ab10-614b3f8f6921";       
+    "6c1265a1-ad7d-4765-98ca-2802a5e40328" -> "56873873-b95b-4ec5-8741-e9b163a25c37";       
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" -> "6c1265a1-ad7d-4765-98ca-2802a5e40328";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "60bef4fa-66f2-4b55-8c15-7e02ad69ff30";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "b1055b93-253e-4270-a122-73be82cef2db";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "05777ba9-ad1e-4050-af7b-cd3c495b5f19";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "1eafa1ce-cf56-443e-90fb-15bdc3cd97ec";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "9850f8e8-6580-4ba8-8683-f36ba0327e9f";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "5498bb37-379e-416d-97c6-ff885b67268f";       
+    "b1055b93-253e-4270-a122-73be82cef2db" -> "78ea842d-d311-4851-854a-fffc86334a39";       
+    "b1055b93-253e-4270-a122-73be82cef2db" -> "51fff5c4-dc21-43d1-8f5d-bc81c9937729";       
+    "b1055b93-253e-4270-a122-73be82cef2db" -> "3105d24a-9274-477e-9fb2-e21dd3e532dc";       
+    "b1055b93-253e-4270-a122-73be82cef2db" -> "6ca3e2af-24fa-4cc3-a418-0e0b7b39fdd2";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "b1055b93-253e-4270-a122-73be82cef2db";       
+    "60bef4fa-66f2-4b55-8c15-7e02ad69ff30" -> "9a2f3579-ec69-4d74-a34e-5bab3e783855";       
+    "60bef4fa-66f2-4b55-8c15-7e02ad69ff30" -> "ad278dea-e441-46a6-b2bc-24fd026e1360";       
+    "5498bb37-379e-416d-97c6-ff885b67268f" -> "60bef4fa-66f2-4b55-8c15-7e02ad69ff30";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "4fd2ce14-76cf-426d-9e6b-44b5aa123f0c";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "089cada7-a969-4701-82f4-3d3fed279761";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "adb4b981-2d03-46e0-8e4b-83f8200177a5";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "c28c338e-4377-461a-97d0-120056689580";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "b1fc8966-08e8-423a-aaea-3d589ee7042c";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "dd81be00-4974-43cd-a24c-44cffa785b80";       
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" -> "fbedfe4b-2279-49b6-8a5d-a9e77d053c89";       
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" -> "19888b65-4693-4a09-a1ae-ee6394f94a7b"; 
+
+    "d1b93572-ddf8-45c5-91ae-526d6519c322" [label="root | root"]
+    "19888b65-4693-4a09-a1ae-ee6394f94a7b" [label="Resources | None"]
+    "5498bb37-379e-416d-97c6-ff885b67268f" [label="Reference | None"]
+    "409abb50-3819-474f-9e21-d3b7ee20257c" [label="How To | None"]
+    "aa791be5-9895-45a8-8144-8ff3b8f58e7e" [label="Concepts | None"]
+    "25fcbf5e-0362-4837-b71a-45633d01fe61" [label="Get Started | None"]
+    "e7a5c905-85ab-4090-9fd5-1cfdd9153dd6" [label="Overview | None"]
+    "e241a297-bc47-4d4f-993f-801dd07adf12" [label="Cloud Services (classic) documentation | None"]
+    "6e147376-4cbc-4a7e-9cf9-bd3766c0fa43" [label="Cloud service config files and packaging | article"]
+    "ef4960f9-71fd-4ef9-ad90-36615f91467b" [label="What is Cloud Services (classic)? | article"]
+    "99d3b385-faa8-48d7-a506-fbdc59547604" [label="Troubleshoot LocationNotFoundForRoleSize | Error"]
+    "fa9ce2ac-668a-418e-b724-326d5ea0be2f" [label="Example Python for Visual Studio Cloud Service | article"]
+    "7f44c03d-9869-4ed3-a9f8-6d4b1222acfe" [label="Example .NET Cloud Service | article"]   
+    "e66f8c49-2c83-4771-89e4-b32c3928ba26" [label="Security baseline | None"]
+    "d2d74654-4dfd-4fe4-a7b1-9f8f32b315c2" [label="Troubleshoot | None"]
+    "595be46e-1a75-4ba8-b092-3ca89dae9a42" [label="Monitor | None"]
+    "4135fbd0-2874-4e57-98d4-4a0a96fcdca2" [label="Debug | None"]
+    "fecebc29-aed1-441b-a32d-39706ccda8fb" [label="Migrate | None"]
+    "f322015f-6a63-4fb5-b003-f47bd03089e1" [label="Develop | None"]
+    "3c8764e4-ac8a-44d0-a7e0-87fd9b8e1379" [label="Plan | None"]
+    "06b917ab-3bf8-43e4-887c-43f9d88a6f64" [label="Updates | article"]
+    "7b86dfdf-85b4-4642-8df4-75318397c201" [label="Virtual machine sizes | article"]        
+    "ddcbd97a-8c11-491e-b1af-f0b72d92f097" [label="Trace Cloud Service with Diagnostics | article"]
+    "bdab4545-cb0c-445e-9f35-a53b383a8286" [label="Store and view diagnostic data in Azure Storage | conceptual"]
+    "bb794e7a-620e-437b-89dd-bd226b54ba18" [label="Manage certificates | None"]
+    "9709c271-21c7-4dec-baf0-b0fa24c8d989" [label="Manage service | None"]
+    "d53001a5-9840-4642-81ba-983f255c6160" [label="Deploy | None"]
+    "9e09e942-b12a-4acd-ab2f-b61c40409964" [label="Configure Remote Desktop | None"]        
+    "14be7f05-061a-4f18-98c9-099ec6842809" [label="Configure start up tasks | None"]        
+    "76a85cba-3197-4e6f-bade-27456a2ff7a0" [label="Storage and Visual Studio | None"]       
+    "f6fc7e7a-e5ec-4d71-9df8-446fae785ebe" [label="Build a Node.js web application using Express | article"]
+    "e4337b7a-ddfa-42a6-8773-0f11e707b649" [label="Build and deploy a Node.js application | article"]
+    "1c6a8eef-926a-4faf-8c27-fbb8ca82f0ac" [label="Create PHP web and worker roles | article"]
+    "e49a1e7d-e360-4414-8876-bfba8a4e26a2" [label="Use Twilio to make a phone call (.NET) | None"]
+    "9fc8346c-7e12-470a-bb1a-c4d2a7cff652" [label="Socket.io (Node.js) | article"]
+    "7992c7a5-09c4-4c83-9c3e-e76abcdf446f" [label="Handle Cloud Service lifecycle events | article"]
+    "2246e533-950c-4c60-9a77-5f2c1874053c" [label="Configure traffic rules for a role | article"]
+    "3f97c7ea-04e3-4fb9-855b-f71cc0235337" [label="Use a task to Install .NET on a Cloud Service role | article"]
+    "321f8011-7f94-42cd-a0e2-414880a993eb" [label="Common startup tasks | article"]
+    "6c1d1972-2c8e-4de5-aef2-01a15f8ea677" [label="Create startup tasks | article"]
+    "8c159ec3-6c97-42a7-8f12-68df668426d5" [label="Visual Studio | article"]
+    "97d48fae-4fd1-4dfd-9436-59867c8bd722" [label="PowerShell | article"]
+    "80828648-2395-4433-aac3-be1f4a34878b" [label="Portal | article"]
+    "11d9ad41-4630-426d-b407-3882311eead7" [label="Connect to a custom Domain Controller | article"]
+    "dd2731b2-95f8-4d95-8f71-1967c6e3c5dc" [label="Configure a custom domain name | article"]
+    "368cecb4-882c-435d-8e7c-eff8888ce449" [label="Create an empty cloud service container in PowerShell | article"]
+    "024f9fcc-afe7-40f8-ae0d-5186f9fedf12" [label="Create and deploy a cloud service in portal | article"]
+    "622831b3-95ed-42ef-a3d3-613aed41faec" [label="Cloud Services Role config XPath cheat sheet | article"]
+    "0c872f1f-d148-429a-891a-308a54919861" [label="Guest OS release news | article"]        
+    "65cf1444-963a-43b7-985c-66b0647392f1" [label="Guest OS retirement | None"]
+    "63164ef1-aaa0-4f2f-9932-435943e31e51" [label="Guest OS patches | article"]
+    "d1e4a341-0d89-4b56-99c9-1642b1af1e9c" [label="Mitigating speculative execution | article"]
+    "fb6c597a-c66d-44e7-a69c-37b6ef0d40d0" [label="Use Python to manage Azure Resources | article"]
+    "ddba6825-0c72-4681-b727-ef653355a9ac" [label="Configure automatic scaling | article"]  
+    "5bedb314-2ecf-4e8a-a249-e5e46521b4bc" [label="Manage a Cloud Service using Azure Automation | article"]
+    "72c09274-c2d4-4a97-a05f-d7810163bb9b" [label="Configure Cloud Service | article"]      
+    "295ea835-6421-45e1-a77e-36ec5aed0250" [label="Common management tasks | article"]      
+    "3ddd7874-29d0-4764-80fc-bb9ee8e4f4d3" [label="Family 1 retirement notice | article"]   
+    "8b1fc78d-2272-450b-aa41-e270b48446e8" [label="Retirement policy | article"]
+    "9e4dd3e5-3d92-4e9c-a714-0356d359398a" [label="Configure SSL | article"]
+    "3abe3d5e-77fd-4a98-9d0a-dee9a7b504e5" [label="Cloud Services and management certificates | article"]
+    "8b1fbe90-8a9e-4d7c-97f5-4f07bddf0d79" [label="Common errors and known issues | Error"] 
+    "8c3ccee1-0ef4-4f72-9d56-61b5cd72a615" [label="Migrate using PowerShell | Error"]       
+    "9b874794-5a12-4483-b405-b2515b934c13" [label="Migrate using the Azure portal | Error"] 
+    "fe3aa5e8-96d2-4a37-8fae-6692975c96fb" [label="Migration technical details | Error"]    
+    "c40a578c-339b-470d-bc68-ec3b9ca37de6" [label="Migration overview | Error"]
+    "988896b2-b971-4911-b261-47110240372e" [label="Configure SSL | article"]
+    "a1e213ee-c962-4940-887d-74efe7c1b2fe" [label="Cloud Services and management certificates | article"]
+    "46d60b6c-d37f-4fdf-9876-615034b0bec5" [label="Enable diagnostics | None"]
+    "131abb6f-c6ad-4b5f-aae3-b1d8aed8adc1" [label="Test performance | None"]
+    "45f30932-b3c7-4439-a1b6-5e65ebe1e69b" [label="Use performance counters | article"]     
+    "6af825ac-c280-4ae2-a0e5-233794532fc0" [label="Monitor cloud service | article"]        
+    "9066dfa6-929e-4c8c-91fd-73cab2780475" [label="Test with Visual Studio Profiler | article"]
+    "003124a0-ed00-4d07-b987-34b943280282" [label="Trace Cloud Service with Diagnostics | article"]
+    "10bad0da-8277-452d-b6b0-78ca4123de00" [label="Store and view diagnostic data in Azure Storage | conceptual"]
+    "24e5a6d2-a809-4ca5-acb7-c948f63afca6" [label="Visual Studio | None"]
+    "07d9fa0f-f814-4d16-93b1-fc794bbb1e21" [label=".NET | article"]
+    "4b1c4667-46b9-4c69-91a4-4ff48b1a6d23" [label="Azure PowerShell | article"]
+    "6c1265a1-ad7d-4765-98ca-2802a5e40328" [label="Cloud Services FAQ | None"]
+    "b41dae53-6203-4739-9ece-8b23f634141d" [label="Resource health support for Cloud Services | article"]
+    "73ebb1e7-ec11-4cbd-8b37-5afbae2ed894" [label="Workflow of classic VM architecture | article"]
+    "0fc3619a-0c8d-4efd-8dfd-f18e6125cda9" [label="Recovery guidance | article"]
+    "9f6f6845-0d86-4a48-aeee-2219ec4969bc" [label="Role failed to start | article"]
+    "b8da5e64-b24c-4db3-846a-c72359451a48" [label="Common deployment problems | troubleshooting"]
+    "8bce4105-1b49-4888-a659-b4909fd41b5a" [label="Default TEMP folder size too small for role | troubleshooting"]
+    "9d1d6199-08f1-4c50-8305-0dfc19bac279" [label="Application does not support TLS 1.2 | troubleshooting"]
+    "eab845ea-39d5-4e78-a173-0c34fb14b10e" [label="Common causes of Cloud Service roles recycling | troubleshooting"]
+    "5cbf53e3-4862-4c21-b932-f36c00432a95" [label="Cloud Service allocation failure | troubleshooting"]
+    "65edea51-f094-4c03-80ac-e9b04e12a60e" [label="Debug | None"]
+    "4e3c490c-d0c6-47ab-918f-5d1d30580130" [label="Published Cloud Service with Visual Studio | None"]
+    "4a23647a-46d2-4379-afee-57478879c404" [label="Local Cloud Service with Visual Studio | None"]
+    "18b15ab4-a09a-4ae0-a075-215c6621df2b" [label="Options for a Cloud Service | None"]     
+    "250ec294-133c-434f-afbf-a3e9ca68da18" [label="Deployment FAQ | None"]
+    "28298d6b-9795-4cba-b7b0-99e48bde8bf7" [label="Connectivity and networking FAQ | None"] 
+    "027f8a67-53b4-459e-ab10-614b3f8f6921" [label="Configuration and management FAQ | None"]
+
+    "56873873-b95b-4ec5-8741-e9b163a25c37" [label="Application and service availability FAQ | None"]
+    "60bef4fa-66f2-4b55-8c15-7e02ad69ff30" [label=".cscfg XML Schema | None"]
+    "b1055b93-253e-4270-a122-73be82cef2db" [label=".csdef XML Schema | None"]
+    "05777ba9-ad1e-4050-af7b-cd3c495b5f19" [label="Code samples | None"]
+    "1eafa1ce-cf56-443e-90fb-15bdc3cd97ec" [label="REST | None"]
+    "9850f8e8-6580-4ba8-8683-f36ba0327e9f" [label="Azure CLI | None"]
+    "78ea842d-d311-4851-854a-fffc86334a39" [label="NetworkTrafficRules Schema | article"]   
+    "51fff5c4-dc21-43d1-8f5d-bc81c9937729" [label="WorkerRole Schema | article"]
+    "3105d24a-9274-477e-9fb2-e21dd3e532dc" [label="WebRole Schema | article"]
+    "6ca3e2af-24fa-4cc3-a418-0e0b7b39fdd2" [label="LoadBalancerProbe Schema | article"]     
+    "9a2f3579-ec69-4d74-a34e-5bab3e783855" [label="NetworkConfiguration Schema | article"]  
+    "ad278dea-e441-46a6-b2bc-24fd026e1360" [label="Role Schema | article"]
+    "4fd2ce14-76cf-426d-9e6b-44b5aa123f0c" [label="Videos | None"]
+    "089cada7-a969-4701-82f4-3d3fed279761" [label="Service updates | None"]
+    "adb4b981-2d03-46e0-8e4b-83f8200177a5" [label="Pricing calculator | None"]
+    "c28c338e-4377-461a-97d0-120056689580" [label="Pricing | None"]
+    "b1fc8966-08e8-423a-aaea-3d589ee7042c" [label="Microsoft Q&amp;A question page | None"] 
+    "dd81be00-4974-43cd-a24c-44cffa785b80" [label="Learning path | None"]
+    "fbedfe4b-2279-49b6-8a5d-a9e77d053c89" [label="Azure Roadmap | None"]
+    }
