@@ -1,5 +1,6 @@
 import logging
 import sys
+import yaml
 
 from neo4j import GraphDatabase
 from neo4j.exceptions import ServiceUnavailable
@@ -74,10 +75,18 @@ class App:
         return [row["name"] for row in result]
 
 
+def load_yaml_as_dict(file_path):
+    with open(file_path, 'r') as file:
+        data = yaml.safe_load(file)
+    return data
+
 if __name__ == "__main__":
-    bolt_url = "bolt://localhost:7474"
-    user = ""
-    password = ""
+
+    cred = load_yaml_as_dict('fowler.yml')
+
+    bolt_url = cred['domain']
+    user = cred['username']
+    password = cred['password']
     App.enable_log(logging.INFO, sys.stdout)
     app = App(bolt_url, user, password)
     app.create_friendship("Alice", "David", "School")
