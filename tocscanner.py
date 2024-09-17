@@ -9,7 +9,7 @@ import yaml
 import uuid
 import html as HTML
 import logging
-import mdbutilities.mdbutilities as MU
+import mdbutilities as MU
 import markdownvalidator.mdhandler as MDH
 import textsummary as SUM
 import textwords as LEX

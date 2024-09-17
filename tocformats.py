@@ -16,7 +16,7 @@ from neo4j import GraphDatabase
 import logging
 from neo4j.exceptions import ServiceUnavailable
 
-import mdbutilities.mdbutilities as MU
+import mdbutilities as MU
 import textsummary as SUM
 import textwords as LEX
 

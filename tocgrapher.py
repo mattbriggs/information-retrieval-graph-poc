@@ -1,7 +1,7 @@
 '''
 Workflow for module for graphing TOCs.
 
-2022.11.22 Matt Briggs
+2024.9.16 Matt Briggs
 '''
 
 import yaml
@@ -13,7 +13,7 @@ import logging
 import tocharvestor as TH
 import tocscanner as TS
 import tocformats as TF
-import mdbutilities.mdbutilities as MU
+import mdbutilities as MU
 
 TODAYSDATE = datetime.date.fromtimestamp(time.time());
 
