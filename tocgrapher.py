@@ -71,7 +71,7 @@ def main():
     '''
     global TOCLIST
 
-    with open (r"C:\git\feature\content-feature\ex-003\jobtoc.yml", "r") as stream:
+    with open (r"jobtoc.yml", "r") as stream:
         config = yaml.load(stream, Loader=yaml.CLoader)
 
     outtype = config["type"].lower()

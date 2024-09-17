@@ -12,6 +12,7 @@ Each function produces the target output. Currently supporting:
 
 '''
 
+import yaml
 from neo4j import GraphDatabase
 import logging
 from neo4j.exceptions import ServiceUnavailable
@@ -48,9 +49,15 @@ class Neo4jDB:
         return result.single()[0]
 
 def run_cypher(cypher):
-    with open("marmot.txt", "r") as file:
-        pylon = file.read()
-    add_element = Neo4jDB("neo4j+s://9fcd5bba.databases.neo4j.io", "neo4j", pylon)
+
+    with open (r"working/fowler.yml", "r") as stream:
+        neocred = yaml.load(stream, Loader=yaml.CLoader)
+
+    uri = neocred["domain"]
+    username = neocred["username"]
+    token = neocred["password"]
+
+    add_element = Neo4jDB(uri, username, token)
     add_element.create_element(cypher)
     add_element.close()
 
