@@ -42,6 +42,7 @@ The system starts with: `tocgrapher.py`
     ```yml
     output: "C:\\data\\tocgraphs\\"
     type: "neo4j"
+    limit: 1000
     folders:
       - folder: "C:\\git\\ms\\azure-docs-pr\\articles\\"
     ```
@@ -50,9 +51,10 @@ The system starts with: `tocgrapher.py`
     | --- | --- | --- |
     | output | file path (escaped virgule) | Output directory where the logs will be stored or with formats with an output, where the outputs will be placed. |
     | type | Enum | `neo4j` : will connect to a Neo4J graph database and load the graph.<br>`csv`: Qill drop each toc graph as a node/edge pair of files into the output folder. |
+    | limit | number | Limits the number of TOCs. Nothing will happen if you type 0. |
     | folders | array | a list of file path (escaped virgule)s to repositories to scan for` toc.ymls`. |
 2. Update `fowler.yml` with Neo4J credentials.
-    Here is the following example of the fowler.yml.
+    Here is the following example of the `fowler.yml`.
       ```yml
       ---
       username: <username>
