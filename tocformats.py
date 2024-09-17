@@ -50,8 +50,8 @@ class Neo4jDB:
 
 def run_cypher(cypher):
 
-    with open (r"working/fowler.yml", "r") as stream:
-        neocred = yaml.load(stream, Loader=yaml.CLoader)
+    with open ("working/fowler.yml", "r") as stream:
+        neocred = yaml.safe_load(stream)
 
     uri = neocred["domain"]
     username = neocred["username"]

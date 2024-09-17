@@ -1,4 +1,5 @@
+---
 output: "C:\\data\\tocgraphs\\"
 type: "neo4j"
 folders:
-  - folder: "C:\\git\\ms\\azure-stack-docs-pr\\azure-stack\\operator
+  - folder: "C:\\git\\ms\\azure-stack-docs-pr\\azure-stack\\operator"
