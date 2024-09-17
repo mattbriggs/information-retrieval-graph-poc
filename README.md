@@ -34,8 +34,9 @@ We may need a service that categories the content by possible content type based
 
 ### How to use instructions (rough)
 
-1. The system starts with: `tocgrapher.py`
-2. Update `jobtoc.yml` with the repos.
+The system starts with: `tocgrapher.py`
+
+1. Update `jobtoc.yml` with the repos.
    Here is the following example of the jobtoc.yml.
     
     ```yml
@@ -50,7 +51,7 @@ We may need a service that categories the content by possible content type based
     | output | file path (escaped virgule) | Output directory where the logs will be stored or with formats with an output, where the outputs will be placed. |
     | type | Enum | `neo4j` : will connect to a Neo4J graph database and load the graph.<br>`csv`: Qill drop each toc graph as a node/edge pair of files into the output folder. |
     | folders | array | a list of file path (escaped virgule)s to repositories to scan for` toc.ymls`. |
-3. Update `fowler.yml` with Neo4J credentials.
+2. Update `fowler.yml` with Neo4J credentials.
     Here is the following example of the fowler.yml.
       ```yml
       ---
@@ -58,6 +59,10 @@ We may need a service that categories the content by possible content type based
       password: <token>
       domain: <neo url>
       ```
+3. Type:
+    ```python
+    tocgrapher.py
+    ```
 
 ### Explanation of tocgrapher
 
