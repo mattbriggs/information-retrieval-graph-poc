@@ -150,8 +150,6 @@ def create_graphml_nodes(ingraph):
         output += str(i[0])
     return output
 
-
-
 def create_graphmledges(ingraph):
     ''' '''
     output = ""
