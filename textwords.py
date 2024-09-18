@@ -182,14 +182,10 @@ def get_top_ten(textcorpus):
             pagedata["Keyword"].append(term)
         SEO_df_full = pd.DataFrame(pagedata).sort_values(by=["SEO score", "Count"], ascending=False).reset_index()
         SEO_summary = SEO_df_full.loc[0:9].to_dict()
-        SEO_out = {}
+        SEO_out = []
         count = 0
         for i in SEO_summary['index']:
-            count += 1
-            record = {}
-            record['score rank'] = i + 1
-            record['keyword'] = SEO_summary['Keyword'][i]
-            SEO_out[count] = record
+            SEO_out.append(SEO_summary['Keyword'][i])
     except Exception as e:
         SEO_out = {1: {"error": "Unable to process file.", "message": str(e)}}
     

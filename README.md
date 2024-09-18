@@ -4,9 +4,9 @@ Create an information retrieval system that who effectiveness as retrieving info
 
 This project is based on the following project.
 
-## Ex-003: Work on pattern mining discovery using a graph
+## Work on pattern mining discovery using a graph
 
-Updated: 2022.11.23
+Updated: 2024.09.17
 
 This exercises will load a list of repositories and crawl the repo to find 'toc.yml' objects. It then feeds each toc.yml file to a function that graphs the function. A routine then produces cypher files that can be loaded into Neo4j.
 
@@ -16,7 +16,7 @@ The output of the graphing section is format agnostic, and could accommodate dif
 
 ### Project dependencies
 
-markdownvalidator: https://github.com/mattbriggs/markdown-validator
+**markdownvalidator**: https://github.com/mattbriggs/markdown-validator. I am using this as a local package. 
 
 ### Working notes
 

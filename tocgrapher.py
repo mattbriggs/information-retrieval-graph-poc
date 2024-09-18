@@ -71,8 +71,8 @@ def main():
     '''
     global TOCLIST
 
-    with open (r"jobtoc.yml", "r") as stream:
-        config = yaml.load(stream, Loader=yaml.CLoader)
+    with open ("jobtoc.yml", "r") as stream:
+        config = yaml.safe_load(stream)
 
     outtype = config["type"].lower()
     outputpath = config["output"]
