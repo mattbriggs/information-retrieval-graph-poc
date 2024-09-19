@@ -63,39 +63,42 @@ class Neo4jClusterUpdater:
         top_terms = [term_names[i] for i in term_ids[:3]]  # Get the first 3 terms as the base
         return "Category: " + ", ".join(top_terms)
 
-    def create_category_in_neo4j(self, category_name, parent_category_id=None):
-        """Create a category node in Neo4j."""
-        with self.driver.session() as session:
-            try:
-                print(f"Attempting to create category: {category_name}")  # Log the category being created
-                if parent_category_id:
-                    result = session.run("""
-                        MERGE (c:Category {name: $category_name})
-                        WITH c
-                        MATCH (p:Category {id: $parent_category_id})
-                        MERGE (p)-[:HAS_CHILD]->(c)
-                        RETURN c.id AS category_id
-                    """, category_name=category_name, parent_category_id=parent_category_id)
-                else:
-                    result = session.run("""
-                        MERGE (c:Category {name: $category_name})
-                        RETURN c.id AS category_id
-                    """, category_name=category_name)
+def create_category_in_neo4j(self, category_name, parent_category_id=None):
+    """Create a category node in Neo4j."""
+    with self.driver.session() as session:
+        try:
+            print(f"Attempting to create category: {category_name}")  # Log the category being created
+            if parent_category_id:
+                result = session.run("""
+                    MERGE (c:Category {name: $category_name})
+                    ON CREATE SET c.id = apoc.create.uuid()
+                    WITH c
+                    MATCH (p:Category {id: $parent_category_id})
+                    MERGE (p)-[:HAS_CHILD]->(c)
+                    RETURN c.id AS category_id
+                """, category_name=category_name, parent_category_id=parent_category_id)
+            else:
+                result = session.run("""
+                    MERGE (c:Category {name: $category_name})
+                    ON CREATE SET c.id = apoc.create.uuid()
+                    RETURN c.id AS category_id
+                """, category_name=category_name)
 
-                category_record = result.single()
-                if category_record:
-                    print(f"Successfully created/retrieved category: {category_name} with id {category_record['category_id']}")
-                    return category_record["category_id"]
-                else:
-                    print(f"Failed to retrieve category id for: {category_name}")
-                    return None
-
-            except Exception as e:
-                print(f"Error creating category for {category_name}: {e}")
+            category_record = result.single()
+            if category_record:
+                print(f"Successfully created/retrieved category: {category_name} with id {category_record['category_id']}")
+                return category_record["category_id"]
+            else:
+                print(f"Failed to retrieve category id for: {category_name}")
                 return None
+
+        except Exception as e:
+            print(f"Error creating category for {category_name}: {e}")
+            return None
 
     def link_term_to_category(self, term_id, category_id):
         """Link a term to a category in Neo4j."""
+        print("Linking term to category... {}".format(term_id))
         if not category_id:
             print(f"Skipping linking for term {term_id} as category_id is None.")
             return
@@ -126,6 +129,9 @@ class Neo4jClusterUpdater:
     def close_connection(self):
         """Close the Neo4j connection."""
         self.driver.close()
+
+class Neo4jClusterUpdater:
+    # Other methods...
 
     def update_clusters_in_neo4j(self):
         """Main function to process terms, perform clustering, and update Neo4j."""
@@ -158,6 +164,7 @@ class Neo4jClusterUpdater:
             if category_id:
                 # Link terms to the category
                 for i, term_index in enumerate(term_indices):
+                    print(term_index)
                     term_id = term_ids[term_index]
                     self.link_term_to_category(term_id, category_id)
                     print(f"Linked term {i + 1}/{len(term_indices)} in cluster {cluster_id + 1}.")
@@ -170,5 +177,6 @@ class Neo4jClusterUpdater:
 # Usage
 if __name__ == "__main__":
     updater = Neo4jClusterUpdater("working/fowler.yml")
-    updater.update_clusters_in_neo4j()  # Call the correct method
+    updater.update_clusters_in_neo4j()  # Ensure this method exists in the class
     updater.close_connection()
+
