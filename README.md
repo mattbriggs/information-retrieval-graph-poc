@@ -65,6 +65,18 @@ The system starts with: `tocgrapher.py`
     ```python
     tocgrapher.py
     ```
+4. Type:
+    ```python
+    tockeywords.py
+    ```
+5. Type:
+    ```python
+    toctaxonomy.py
+    ```
+6. 5. Type:
+    ```python
+    tocfscore.py
+    ```
 
 ### Explanation of tocgrapher
 
