@@ -75,7 +75,7 @@ def input_tocfile(intocyaml):
                         edge = {}
                         node["node_id"] = str(uuid.uuid4())
                         node["node_type"] = "toc"
-                        node["name"] = HTML.escape(intoc["name"], quote="True")
+                        node["name"] = intoc["name"]
                         node["content_type"] = "None"
                         node["href"] = "None"
                         node["filepath"] = stem
@@ -106,11 +106,10 @@ def input_tocfile(intocyaml):
                         edge = {}
                         node["node_id"] = str(uuid.uuid4())
                         node["node_type"] = "content"
-                        node["name"] = escape_text(intoc["name"])
+                        node["name"] = intoc["name"]
                         node["href"] = intoc["href"]
                         filepath = stem + str(intoc["href"])
                         node["filepath"] = filepath
-                        # node["content_type"] = "None"
                         if intoc["href"].find(".md") > 0:
                             try:
                                 handler = MDH.MDHandler()

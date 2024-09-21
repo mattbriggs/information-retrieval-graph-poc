@@ -48,65 +48,67 @@ class Neo4jDB:
         result = tx.run(message)
         return result.single()[0]
 
-def run_cypher(cypher):
+def unpack_data(data):
+    """
+    Unpacks input data into node_data and edge_data.
+    
+    :param data: A tuple containing two lists (nodes and edges).
+    :return: Two lists: node_data and edge_data.
+    """
+    if len(data) != 2:
+        raise ValueError("Input data must contain two lists: one for nodes and one for edges.")
+    
+    # Unpack the data into two separate lists
+    node_data = data[0]
+    edge_data = data[1]
+    
+    # Ensure both lists are non-empty and correctly formatted
+    if not isinstance(node_data, list) or not isinstance(edge_data, list):
+        raise ValueError("Both nodes and edges should be provided as lists.")
+    
+    return node_data, edge_data
 
-    with open ("working/fowler.yml", "r") as stream:
-        neocred = yaml.safe_load(stream)
+# function to handle creating nodes and edges in Neo4J
+def create_cypher_graph(driver, data):
+    # Use unpack_data subfunction to get nodes and edges
+    node_data, edge_data = unpack_data(data)
+    
+    # Subfunction to create nodes
+    def create_nodes(tx, node_list):
+        query = """
+        CREATE (n:Content {
+            node_id: $node_id,
+            node_type: $node_type,
+            name: $name,
+            content_type: $content_type,
+            href: $href,
+            filepath: $filepath,
+            keywords: $keywords,
+            summary: $summary
+        })
+        """
+        for node in node_list:
+            # Provide default values if certain keys are missing
+            node.setdefault('keywords', [])
+            node.setdefault('summary', '')
+            tx.run(query, **node)
 
-    uri = neocred["domain"]
-    username = neocred["username"]
-    token = neocred["password"]
+    # Subfunction to create relationships (edges)
+    def create_relationships(tx, edge_list):
+        query = """
+        MATCH (a {node_id: $source}), (b {node_id: $target})
+        CREATE (a)-[:CHILD_OF]->(b)
+        """
+        for edge in edge_list:
+            tx.run(query, source=edge['source'], target=edge['target'])
 
-    add_element = Neo4jDB(uri, username, token)
-    add_element.create_element(cypher)
-    add_element.close()
-
-    # local
-    # add_element = Neo4jDB("bolt://localhost:7687", username, password)
-    # add_element.create_element(cypher)
-    # add_element.close()
-
-# cypher
-def create_cypher_graph(ingraph):
-    global NODECOUNT
-    NODECOUNT = 1
-    '''With the path and file to a target directory and a mapper graph, create cypher files.'''
-    nodes = create_cypher_nodes(ingraph[0])
-    edges = create_cypher_edges(ingraph[1])
-    output = nodes + edges
-    return output
-
-
-def create_cypher_nodes(nodes):
-    '''Create a node:
-    CREATE (TheMatrix:Movie {title:'The Matrix', released:1999, tagline:'Welcome to the Real World'})'''
-    global NODECOUNT
-    output = ""
-    for serial, i in enumerate(nodes):
-        NODECOUNT += serial
-        try:
-            create_node = "CREATE (n{}:content {})\nReturn (n{});".\
-                format(NODECOUNT, make_attribute(i), NODECOUNT)
-            run_cypher(create_node)
-            output += create_node
-        except Exception as e:
-            logging.error("Error Creating a node: {}".format(e))
-    return output
-
-
-def create_cypher_edges(edges):
-    '''Create an edge:
-    (Keanu)-[:ACTED_IN {roles:['Neo']}]->(TheMatrix)'''
-    output = ""
-    for i in edges:
-        try: 
-            create_edge = "MATCH (a:content), (b:content) WHERE a.node_id = '{}' AND b.node_id ='{}'\n\
-            CREATE (a)-[r:child]->(b)\nReturn (a), (b);".format(i["source"], i["target"]) 
-            output += create_edge
-            run_cypher(create_edge)
-        except Exception as e:
-            logging.error("Error creating an edge {}".format(e))
-    return output
+    # Run the node and relationship creation in a session
+    with driver.session() as session:
+        # Create nodes
+        session.write_transaction(create_nodes, node_data)
+        
+        # Create relationships
+        session.write_transaction(create_relationships, edge_data)
 
 # gremlin
 def create_gremlin_text(ingraph):

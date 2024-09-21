@@ -10,6 +10,8 @@ import datetime
 import time
 import logging
 
+from neo4j import GraphDatabase
+
 import tocharvestor as TH
 import tocscanner as TS
 import tocformats as TF
@@ -43,11 +45,15 @@ def parse_toc_block(index_start, index_end, outtype, outputpath):
     for count, t, in enumerate(toc_seg):
         print("{} of {} getting {}".format(count+index_start, size, t))
         graphed = TS.input_tocfile(t)
+        MU.write_text(str(graphed), "C:\\git\\feature\\information-retrieval-graph-poc\\working\\data.txt")
         if outtype == "neo4j":
             try:
-                output = TF.create_cypher_graph(graphed)
+                with open("working/fowler.yml", "r") as stream:
+                    credentials = yaml.safe_load(stream)
+                driver = GraphDatabase.driver(credentials["domain"], auth=(credentials["username"], credentials["password"]))
+                output = TF.create_cypher_graph(driver, graphed)
                 filename = outputpath + "{}-graph-{}.cypher".format(TODAYSDATE, count+index_start)
-                MU.write_text(output, filename)
+                # MU.write_text(output, filename)
             except Exception as e:
                 logging.error("Error neo4j for {} : {}\n".format(t, e))
         elif outtype == "csv":
