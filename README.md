@@ -1,12 +1,14 @@
 # Information Retrieval Graph
 
+Updated: 2024.09.17
+
 Create an information retrieval system that who effectiveness as retrieving information can be measured.
 
-This project is based on the following project.
+This project will be a graph-based information retrieval system that uses Neo4J, Python, and the Natural Language Toolkit (NLTK) to map content and retrieve information. The system will focus on measuring performance using an F-score. You can find my explanation of the project and its progress for the [Hackathon 2024](docs/infromation-retrival-graph-hackathon2024.md).
 
 ## Work on pattern mining discovery using a graph
 
-Updated: 2024.09.17
+![A query in the graph](docs/media/hack24-03.png)
 
 This exercises will load a list of repositories and crawl the repo to find 'toc.yml' objects. It then feeds each toc.yml file to a function that graphs the function. A routine then produces cypher files that can be loaded into Neo4j.
 
@@ -75,7 +77,7 @@ The system starts with: `tocgrapher.py`
     ```
 6. 5. Type:
     ```python
-    tocfscore.py
+    tocfscoretest.py
     ```
 
 ### Explanation of tocgrapher
