@@ -3,22 +3,27 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import AgglomerativeClustering
 import nltk
 from neo4j import GraphDatabase
+import openai
 import numpy as np
 
 
 class Neo4jClusterUpdater:
     def __init__(self, credentials_path):
-        """Initialize the Neo4j connection and other configurations."""
+        """Initialize the Neo4j connection, OpenAI API key, and other configurations."""
         self.credentials = self.load_credentials(credentials_path)
         self.driver = GraphDatabase.driver(
             self.credentials["domain"],
             auth=(self.credentials["username"], self.credentials["password"])
         )
+        self.openai_key = self.credentials["openai-key"]
+        self.context = self.credentials["content"]
+        openai.api_key = self.openai_key
+        self.root_node_name = self.credentials["rootnode"]  # Load root node name from fowler.yml
         nltk.download('punkt')
 
     @staticmethod
     def load_credentials(file_path):
-        """Load Neo4j credentials from a YAML file."""
+        """Load Neo4j credentials and OpenAI API key from a YAML file."""
         with open(file_path, "r") as stream:
             return yaml.safe_load(stream)
 
@@ -70,8 +75,8 @@ class Neo4jClusterUpdater:
         
         if num_terms <= max_terms_per_category:
             # Base case: If the number of terms is 7 or less, create a category directly
-            category_name = self.generate_category_name(term_ids, term_names)
-            category_id = self.create_category_in_neo4j(category_name, parent_category_id)
+            category_name = self.generate_category_name(term_names)
+            category_id = self.create_category_with_retry(category_name, parent_category_id)
             if category_id is None:
                 print(f"Failed to create category for {category_name}")
                 return
@@ -101,8 +106,8 @@ class Neo4jClusterUpdater:
                 # Ensure valid sub_term_ids and sub_term_names
                 if sub_term_ids and sub_term_names:
                     # Generate a category for the current level
-                    category_name = self.generate_category_name(indices, term_names)
-                    category_id = self.create_category_in_neo4j(category_name, parent_category_id)
+                    category_name = self.generate_category_name(sub_term_names)
+                    category_id = self.create_category_with_retry(category_name, parent_category_id)
 
                     if category_id:
                         self.recursive_clustering(sub_matrix, sub_term_ids, sub_term_names, max_terms_per_category, category_id)
@@ -111,22 +116,32 @@ class Neo4jClusterUpdater:
                 else:
                     print(f"Empty sub-term or name list detected for cluster {cluster_id}. Skipping...")
 
-    def generate_category_name(self, term_ids, term_names):
-        """Generate a category name based on terms in the cluster."""
-        if not term_ids or not term_names:  # Ensure valid indices and names
-            return "Unnamed Category"
-        
-        # Ensure that term_ids are valid integers (no None values)
-        valid_term_ids = [i for i in term_ids if i is not None]
+    def generate_category_name(self, term_names):
+        """Generate a concise category name using OpenAI's GPT-4 based on the summary of child terms."""
+        prompt = (
+            f"Summarize the following terms into a single noun or noun cluster: {', '.join(term_names)}. "
+            f"The context is {self.context}."
+        )
 
-        if not valid_term_ids:
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-4",
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant that generates concise category names."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=50,
+                n=1,
+                temperature=0.7,
+            )
+            category_name = response['choices'][0]['message']['content'].strip()
+            return category_name
+        except Exception as e:
+            print(f"Error generating category name: {e}")
             return "Unnamed Category"
-        
-        top_terms = [term_names[i] for i in valid_term_ids[:3]]  # Get the first 3 valid terms as the base
-        return "Category: " + ", ".join(top_terms)
 
     def create_category_in_neo4j(self, category_name, parent_category_id=None):
-        """Create a category node in Neo4j."""
+        """Create a category node in Neo4j, and ensure no self-referencing edges."""
         with self.driver.session() as session:
             if parent_category_id:
                 result = session.run("""
@@ -134,10 +149,13 @@ class Neo4jClusterUpdater:
                     ON CREATE SET c.id = randomUUID()
                     WITH c
                     MATCH (p:Category {id: $parent_category_id})
+                    WITH p, c
+                    WHERE p.id <> c.id  // Prevent self-referencing edges
                     MERGE (p)-[:HAS_CHILD]->(c)
                     RETURN c.id AS category_id
                 """, category_name=category_name, parent_category_id=parent_category_id)
             else:
+                # Create a root category if no parent exists
                 result = session.run("""
                     MERGE (c:Category {name: $category_name})
                     ON CREATE SET c.id = randomUUID()
@@ -146,6 +164,27 @@ class Neo4jClusterUpdater:
 
             category_record = result.single()
             return category_record["category_id"] if category_record else None
+
+    def create_category_with_retry(self, category_name, parent_category_id=None):
+        """Try to create the category. If it fails, attempt to create it with a fallback name."""
+        category_id = self.create_category_in_neo4j(category_name, parent_category_id)
+        if category_id is None:
+            # Fallback name strategy
+            fallback_name = f"Category-{np.random.randint(1000, 9999)}"
+            print(f"Retrying with fallback name: {fallback_name}")
+            category_id = self.create_category_in_neo4j(fallback_name, parent_category_id)
+        return category_id
+
+    def create_root_category(self, root_node_name):
+        """Create the root node in Neo4j."""
+        with self.driver.session() as session:
+            result = session.run("""
+                MERGE (r:Category {name: $root_node_name})
+                ON CREATE SET r.id = randomUUID()
+                RETURN r.id AS root_id
+            """, root_node_name=root_node_name)
+            root_record = result.single()
+            return root_record["root_id"] if root_record else None
 
     def link_term_to_category(self, term, category_id):
         """Link a term to a category in Neo4j."""
@@ -172,8 +211,11 @@ class Neo4jClusterUpdater:
         processed_terms = self.process_terms(term_names)
         tfidf_matrix = self.create_tfidf_matrix(processed_terms)
 
+        # Create root node
+        root_category_id = self.create_root_category(self.root_node_name)
+
         # Start the recursive clustering process with the root category
-        self.recursive_clustering(tfidf_matrix, term_ids, term_names, max_terms_per_category=7, parent_category_id=None)
+        self.recursive_clustering(tfidf_matrix, term_ids, term_names, max_terms_per_category=7, parent_category_id=root_category_id)
 
     def close_connection(self):
         """Close the Neo4j connection."""

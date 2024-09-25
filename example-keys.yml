@@ -1,0 +1,13 @@
+# Neo4j Credentials
+domain: bolt://localhost:7687
+username: neo4j
+password: your-neo4j-password
+
+# OpenAI API Key
+openai-key: your-openai-api-key
+
+# Content context
+content: "an Azure billing service for Microsoft."
+
+# Root node name
+rootnode: "Root node name"

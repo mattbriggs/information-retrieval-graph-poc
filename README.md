@@ -139,4 +139,38 @@ The script seems to have some issues as well, such as the `create_gremlin_text()
 
 Create an information retrieval system that who effectiveness as retrieving information can be measured.
 
+## Note on keys
 
+Here's an example of what the file that contains keys file might look like, including the necessary keys for Neo4j credentials, OpenAI API key, and content context:
+
+```yaml
+# Neo4j Credentials
+domain: bolt://localhost:7687
+username: neo4j
+password: your-neo4j-password
+
+# OpenAI API Key
+openai-key: your-openai-api-key
+
+# Content context
+content: "an Azure billing service for Microsoft."
+
+# Root node name
+rootnode: "Root node name"
+```
+
+### Breakdown:
+1. **Neo4j Credentials**:
+   - `domain`: Specifies the connection string to your Neo4j database.
+   - `username`: Your Neo4j username.
+   - `password`: Your Neo4j password.
+
+2. **OpenAI API Key**:
+   - `openai-key`: The key you use to authenticate OpenAI's API.
+
+3. **Content**:
+   - `content`: The specific context related to the subject domain (e.g., in this case, an Azure billing service for Microsoft). This will be used in the prompt to OpenAI GPT-4 to help generate more contextually appropriate category names. 
+4. **Root Node Name**:
+   - `rootnode`: The name of the root node in the graph.
+
+Make sure to replace the placeholders (`your-neo4j-password`, `your-openai-api-key`) with your actual credentials and content description.

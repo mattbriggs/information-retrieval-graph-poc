@@ -1,5 +1,6 @@
-nltk
-pandas
-pyyaml
-neo4j
-
+openai>=0.27.0  # For interacting with OpenAI's API
+PyYAML==6.0     # For loading the YAML configuration file
+nltk==3.8.1     # For text processing and tokenization
+scikit-learn==1.2.2  # For TF-IDF vectorization and clustering
+neo4j==5.7.0    # For interacting with the Neo4j database
+numpy==1.24.2   # For handling arrays and numerical operations
