@@ -4,13 +4,13 @@ Updated: 2024.09.30
 
 Create an information retrieval system that who effectiveness as retrieving information can be measured.
 
-This project will be a graph-based information retrieval system that uses Neo4J, Python, and the Natural Language Toolkit (NLTK) to map content and retrieve information. The system will focus on measuring performance using an F-score. You can find my explanation of the project and its progress for the [Hackathon 2024](docs/infromation-retrival-graph-hackathon2024.md).
+This project will be a graph-based information retrieval system that uses Neo4J, Python, and the Natural Language Toolkit (NLTK) to map content and retrieve information. The system will focus on measuring performance using an F-score. You can find my explanation of the project and its progress for the [Hackathon 2024](docs/information-retrieval-graph-hackathon2024.md).
 
 ## Work on pattern mining discovery using a graph
 
 ![A query in the graph](docs/media/hack24-03.png)
 
-This exercises will load a list of repositories and crawl the repo to find 'toc.yml' objects. It then feeds each toc.yml file to a function that graphs the function. A routine then produces cypher files that can be loaded into Neo4j.
+This exercises will load a list of repositories and crawl the repo to find 'toc.yml' objects. It then feeds each toc.yml file to a function that graphs the function. A routine then produces Cypher files that can be loaded into Neo4j.
 
 ### Some notes
 
@@ -19,20 +19,6 @@ The output of the graphing section is format agnostic, and could accommodate dif
 ### Project dependencies
 
 **markdownvalidator**: https://github.com/mattbriggs/markdown-validator. I am using this as a local package. 
-
-### Working notes
-
-My notes:
-
-1. Load the toc as a dictionary.
-2. Iterate over each level.
-3. At each level that is a list/array,
-4. Unpack the dictionaries, grab the markdown file, get the content-type and add to the dictionary.
-
-We may need a service that categories the content by possible content type based on the rules.
-
- - https://neo4j.com/docs/python-manual/current/get-started/
- - http://localhost:7474/browser/
 
 ### How to use instructions (rough)
 
@@ -55,8 +41,8 @@ The system starts with: `tocgrapher.py`
     | type | Enum | `neo4j` : will connect to a Neo4J graph database and load the graph.<br>`csv`: Qill drop each toc graph as a node/edge pair of files into the output folder. |
     | limit | number | Limits the number of TOCs. Nothing will happen if you type 0. |
     | folders | array | a list of file path (escaped virgule)s to repositories to scan for` toc.ymls`. |
-2. Update `fowler.yml` with Neo4J credentials.
-    Here is the following example of the `fowler.yml`.
+2. Update `wokring/fowler.yml` with Neo4J credentials.
+    Here is the following example of the `working/fowler.yml`.
       ```yml
       ---
       username: <username>
@@ -91,7 +77,7 @@ This script calculates the F-score for an information retrieval system using a N
 
 ##### Usage
 
-1. Prepare `fowler.yml` with Neo4j credentials.
+1. Prepare `working/fowler.yml` with Neo4j credentials.
 2. Create `queries.yml` with `queries` and `golden_queries` mappings.
 3. Run the script: `python script_name.py`.
 4. Check the generated report at `output/f_score_report.txt`. 
@@ -244,6 +230,11 @@ rootnode: "Root node name"
    - `rootnode`: The name of the root node in the graph.
 
 Make sure to replace the placeholders (`your-neo4j-password`, `your-openai-api-key`) with your actual credentials and content description.
+
+## Neo4J information
+
+ - https://neo4j.com/docs/python-manual/current/get-started/
+ - http://localhost:7474/browser/
 
 ## For more information
 
