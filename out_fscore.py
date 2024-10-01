@@ -2,18 +2,16 @@ import yaml
 from neo4j import GraphDatabase
 from collections import defaultdict
 
-# Neo4J connection parameters
-uri = "neo4j://localhost:7687"
-username = "neo4j"
-password = "password"
-
 class FScoreCalculator:
 
-    def __init__(self, uri, username, password):
+    def __init__(self):
         # Initialize the Neo4j driver
         with open("working/fowler.yml", "r") as stream:
-          neocred = yaml.safe_load(stream)
-        self.driver = GraphDatabase.driver(neocred["domain"], auth=(neocred["username"],  neocred["password"]))
+            self.credentials = yaml.safe_load(stream)
+        self.driver = GraphDatabase.driver(
+            self.credentials["domain"],
+            auth=(self.credentials["username"], self.credentials["password"])
+        )
 
     def close(self):
         # Close the driver connection
@@ -31,23 +29,32 @@ class FScoreCalculator:
         f_score = 2 * (precision * recall) / (precision + recall)
         return precision, recall, f_score
 
-    def run_query(self, term):
-        # Cypher query to retrieve related content by term
-        query = '''
-        MATCH (t:Term)-[:MENTION]-(c:Content)
-        WHERE t.name = $term
-        RETURN c.node_id AS content_id
-        '''
+    def run_query(self, term, query):
         with self.driver.session() as session:
-            result = session.run(query, term=term)
-            return [record["content_id"] for record in result]
+            if "cat.name = $category" in query:
+                # For queries that use the 'category' parameter
+                print(f"Running query for category '{term}' with query:\n{query}")
+                result = session.run(query, category=term)
+            else:
+                # For queries that use the 'term' parameter
+                print(f"Running query for term '{term}' with query:\n{query}")
+                result = session.run(query, term=term)
+                
+            retrieved_ids = [record["content_id"] for record in result]
+            print(f"Retrieved IDs for '{term}': {retrieved_ids}")
+            return retrieved_ids
 
-    def run_tests(self, golden_queries):
+    def run_tests(self, golden_queries, cypher_queries):
         results = defaultdict(dict)
         
         for term, expected_ids in golden_queries.items():
+            # Use the appropriate query from the YAML file
+            if term not in cypher_queries:
+                print(f"Warning: No Cypher query provided for term '{term}'. Skipping.")
+                continue
+
             # Execute the query for the current term
-            retrieved_ids = self.run_query(term)
+            retrieved_ids = self.run_query(term, cypher_queries[term])
             
             # Calculate precision, recall, and F-score
             precision, recall, f_score = self.calculate_f_score(expected_ids, retrieved_ids)
@@ -60,7 +67,7 @@ class FScoreCalculator:
         return results
 
     def generate_report(self, results):
-        with open("C:\\git\\feature\\information-retrieval-graph-poc\\f_score_report.txt", "w") as f:
+        with open("output/f_score_report.txt", "w") as f:
             f.write("F-Score Report for Information Retrieval System\n\n")
             for term, metrics in results.items():
                 f.write(f"Term: {term}\n")
@@ -70,19 +77,20 @@ class FScoreCalculator:
 
 # Main execution
 if __name__ == "__main__":
-    print("Running F-Score calculation for Information Retrieval System\n")
-    # Golden queries with expected results (ground truth)
-    golden_queries = {
-        "XCI Data Model": ["6b83810b-1ca4-4d10-bb00-32036dce3e66"],  # Ground truth content IDs
-        "concessions data": ["0b9f79f1-2159-4c4c-8b02-126f155a60e0"],
-    }
-    
+    # Load the YAML configuration
+    with open("queries.yml", "r") as stream:
+        config = yaml.safe_load(stream)
+
+    # Extract Neo4j connection details and queries
+    cypher_queries = config["queries"]
+    golden_queries = config["golden_queries"]
+
     # Create an FScoreCalculator instance
-    f_score_calculator = FScoreCalculator(uri, username, password)
+    f_score_calculator = FScoreCalculator()
     
     try:
         # Run the tests and generate the report
-        results = f_score_calculator.run_tests(golden_queries)
+        results = f_score_calculator.run_tests(golden_queries, cypher_queries)
         f_score_calculator.generate_report(results)
         print("F-Score report generated: f_score_report.txt")
     finally:

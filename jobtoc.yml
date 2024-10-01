@@ -3,4 +3,4 @@ output: "C:\\data\\tocgraphs\\"
 type: "neo4j"
 limit: 1000
 folders:
-  - folder: "C:\\git\\zz\\hack24"
+  - folder: "C:\\git\\ms\\docs-help-pr\\help-content\\contribute"

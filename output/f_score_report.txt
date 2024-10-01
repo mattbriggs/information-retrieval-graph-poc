@@ -1,0 +1,17 @@
+F-Score Report for Information Retrieval System
+
+Term: Documentation contributor
+  Precision: 1.00
+  Recall: 1.00
+  F-Score: 1.00
+
+Term: Content Plan
+  Precision: 1.00
+  Recall: 1.00
+  F-Score: 1.00
+
+Term: '"Pull Request Procedures"'
+  Precision: 0.71
+  Recall: 1.00
+  F-Score: 0.83
+

@@ -1,0 +1,4 @@
+# Connect to the Neo4j database
+with open("working/fowler.yml", "r") as stream:
+  neocred = yaml.safe_load(stream)
+driver = GraphDatabase.driver(neocred["domain"], auth=(neocred["username"],  neocred["password"]))

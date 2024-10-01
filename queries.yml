@@ -1,0 +1,30 @@
+queries:
+  "Documentation contributor": "MATCH (t:Term)-[:MENTION]-(c:Content) WHERE t.name = $term RETURN c.node_id AS content_id"
+  "Content Plan": "MATCH (t:Term)-[:MENTION]-(c:Content) WHERE t.name = $term RETURN c.node_id AS content_id"
+  "'\"Pull Request Procedures\"'": "MATCH (cat:Category)-[:HAS_TERM]->(t:Term)-[:MENTION]-(c:Content) WHERE cat.name =  '\"Pull Request Procedures\"' RETURN c.node_id AS content_id"
+
+golden_queries:
+  "Documentation contributor": ["87ee47ad-34c5-4fa7-993e-8946f1b515b6"]
+  "Content Plan": ["1157f41c-34cd-4b02-a29e-0259e2cbda34"]
+  "'\"Pull Request Procedures\"'": [
+    "2ecef860-ed57-44b1-87d2-1bff7a5f2962", 
+    "6dc22834-b57d-42c8-82ee-272dc47e0d1c",
+    "c10bb8de-2777-4a05-8ff6-3644df2bd403", 
+    "6fa5f4d1-feff-47e4-925f-b22806cc2aa6", 
+    "e0d459c7-377f-4341-a1c5-1cb3fba0bdb4", 
+    "8e76f460-8da2-4c9f-b57f-a4bf6a2028ed", 
+    "33a8a80b-1fb9-4009-8d7a-badb979e2be4", 
+    "caec0539-2acb-4872-ad16-b793c360eccc", 
+    "e1ade903-cb6d-45ec-9860-448a8f247e3b", 
+    "09f268f8-53b7-4181-afba-7173bfd21f91", 
+    "e155445b-0f45-497a-b1f3-5c817a9b4b7b", 
+    "65138180-6d98-406d-96d2-4cdb233ad72a", 
+    "f833ed9d-d9fc-4fe8-936a-13a655c0e491", 
+    "0d0f7072-c37f-48e3-9894-2aaaba84c7aa", 
+    "1a7d480c-70e0-4b83-ba09-774f039c2585", 
+    "f1c10fde-a919-43cf-bc0f-3408ebecb43a", 
+    "c8e08c0e-3053-455d-994f-ea7c37761025", 
+    "13a2fb2c-49dc-4628-9de9-72ad46ecea89", 
+    "5461fc99-adbe-47cd-b597-1ade625cff1a", 
+    "d0da2c73-ec84-44c5-8187-e5da3f1c49eb"
+  ]
