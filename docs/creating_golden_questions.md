@@ -38,13 +38,11 @@ This ensures that your script can run the query dynamically based on the provide
 
 ## Step 4: Execute and Review Results
 Run `main.py` to see how well your Cypher queries are performing against the golden questions. Review the precision, recall, and F-Score metrics in the generated `f_score_report.txt`.
-```
 
-Sure! I’ll include specific Cypher queries for each type of question and show how you can use them to test not only terms but also categories and supercategories. This will help you evaluate how your information retrieval system handles complex hierarchies and relationships.
 
-### Types of Questions with Example Cypher Queries
+# Types of Questions with Example Cypher Queries
 
-#### 1. **Basic Term Lookup Questions**
+## 1. **Basic Term Lookup Questions**
 - **What content is associated with a specific term?**
   - **Example Question**: "What are the contents related to the term 'XCI Data Model'?"
   - **Example Query**:
@@ -59,7 +57,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "XCI Data Model": ["6b83810b-1ca4-4d10-bb00-32036dce3e66"]
     ```
 
-#### 2. **Category-Based Lookup Questions**
+## 2. **Category-Based Lookup Questions**
 - **What content is associated with a specific category?**
   - **Example Question**: "Which contents are associated with the category 'Data Governance'?"
   - **Example Query**:
@@ -74,7 +72,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "Data Governance": ["12345", "67890"]
     ```
 
-#### 3. **Supercategory-Based Questions**
+## 3. **Supercategory-Based Questions**
 - **What content is associated with a supercategory?**
   - Supercategories group related categories together.
   - **Example Question**: "What contents are associated with the supercategory 'Enterprise Data Management'?"
@@ -90,7 +88,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "Enterprise Data Management": ["98765", "54321", "12345"]
     ```
 
-#### 4. **Precision-Focused Questions**
+## 4. **Precision-Focused Questions**
 - **Does the query return exactly the relevant content items for a given term?**
   - Helps determine if the query is overly broad by returning irrelevant content.
   - **Example Question**: "For the term 'concessions data,' is only relevant content returned?"
@@ -107,7 +105,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "concessions data": ["0b9f79f1-2159-4c4c-8b02-126f155a60e0"]
     ```
 
-#### 5. **Recall-Focused Questions**
+## 5. **Recall-Focused Questions**
 - **Does the query return all possible relevant items for a given term?**
   - Focuses on identifying if the query misses some relevant content.
   - **Example Question**: "Are all documents tagged as 'XCI Data Model' being retrieved?"
@@ -123,7 +121,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "XCI Data Model": ["6b83810b-1ca4-4d10-bb00-32036dce3e66", "09876"]
     ```
 
-#### 6. **Comparative Questions**
+## 6. **Comparative Questions**
 - **How do two different terms compare in terms of the content they retrieve?**
   - Useful for testing overlap and differentiation between related terms.
   - **Example Question**: "How does 'XCI Data Model' compare to 'Data Integration Model' in terms of shared content?"
@@ -139,7 +137,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "XCI vs Data Integration": ["11111", "22222"]
     ```
 
-#### 7. **Contextual Questions**
+## 7. **Contextual Questions**
 - **What content is associated with a term within a specific context?**
   - Contexts could include publication dates, content types, or other attributes.
   - **Example Question**: "What content is related to 'XCI Data Model' that was published after 2022?"
@@ -155,7 +153,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "XCI Data Model - 2022+": ["78910", "12345"]
     ```
 
-#### 8. **Relationship Density Questions**
+## 8. **Relationship Density Questions**
 - **How many terms share a relationship with specific content?**
   - Evaluates the density and relevance of term-to-content connections.
   - **Example Question**: "How many terms are related to content with node_id '12345'?"
@@ -171,7 +169,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "Content-12345-term-density": [5]
     ```
 
-#### 9. **Parent-Child Relationship Questions**
+## 9. **Parent-Child Relationship Questions**
 - **What are the direct child categories of a specific category?**
   - **Example Question**: "What are the child categories of 'Data Management'?"
   - **Example Query**:
@@ -186,7 +184,7 @@ Sure! I’ll include specific Cypher queries for each type of question and show 
       "Data Management Children": ["Data Governance", "Data Quality"]
     ```
 
-#### 10. **Category Membership Questions**
+## 10. **Category Membership Questions**
 - **Which categories does a particular content item belong to?**
   - **Example Question**: "What categories are associated with content '12345'?"
   - **Example Query**:
@@ -220,6 +218,4 @@ golden_queries:
   "XCI Data Model - 2022+": ["78910", "12345"]
 ```
 
-### Final Thoughts
-
-These types of queries will help you test the nuances of your information retrieval system and ensure that your categories and supercategories are correctly organized and queried. Let me know if you need help setting up these queries in the YAML file or adjusting the script further!
+These types of queries will help you test the nuances of your information retrieval system and ensure that your categories and supercategories are correctly organized and queried. Let me know if you need help setting up these queries in the YAML file or adjusting the script further.
